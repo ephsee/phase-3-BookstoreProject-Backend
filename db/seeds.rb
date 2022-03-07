@@ -10,8 +10,8 @@ puts "Seeding Customers"
     # name, email, address
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name
-    full_name = first_name.concat(" #{last_name}")
-    email = "#{first_name}_#{last_name}@flatiron.com"
+    full_name = "#{first_name} #{last_name}"
+    email = "#{first_name.downcase}_#{last_name.downcase}@flatiron.com"
 
     Customer.create(name: full_name, email: email, address: Faker::Address.street_address)
 end
