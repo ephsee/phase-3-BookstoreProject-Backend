@@ -25,4 +25,16 @@ class CustomerController < ApplicationController
         customers.to_json
     end
 
+    delete '/customers/:id' do 
+        customer = Customer.find(params[:id])
+        customer.delete
+        customer.to_json
+    end
+
+    patch '/customers/:id' do
+        customer = Customer.find(params[:id])
+        customer.delete
+        customer.to_json
+    end
+
 end

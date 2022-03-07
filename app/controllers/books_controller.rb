@@ -25,4 +25,16 @@ class BookController < ApplicationController
         book.to_json
     end
 
+    delete '/books/:id' do 
+        book = Book.find(params[:id])
+        book.delete
+        book.to_json
+    end
+
+    patch '/books/:id' do
+        book = Book.find(params[:id])
+        book.delete
+        book.to_json
+    end
+
 end
