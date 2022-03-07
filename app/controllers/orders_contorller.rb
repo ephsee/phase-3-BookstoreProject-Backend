@@ -15,4 +15,26 @@ class OrderController < ApplicationController
         order.to_json
     end
 
+    get '/orders/:id/customer' do
+        order = Order.find(params[:id]).customer
+        order.to_json
+    end
+
+    get '/orders/:id/book' do
+        order = Order.find(params[:id]).book
+        order.to_json
+    end
+
+    delete '/orders/:id' do 
+        order = Order.find(params[:id])
+        order.delete
+        order.to_json
+    end
+
+    patch '/order/:id' do
+        order = Order.find(params[:id])
+        order.delete
+        order.to_json
+    end
+
 end
