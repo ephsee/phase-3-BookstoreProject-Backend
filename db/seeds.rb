@@ -6,7 +6,7 @@ puts "🌱 Seeding spices..."
 # Seed your database here
 puts "Seeding Customers"
 
-10.times do
+4.times do
     # name, email, address
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name
@@ -19,14 +19,14 @@ end
 
 puts "Seeding Books"
 
-50.times do
+20.times do
     # title, author, genre, publisher, quantity
     Book.create(
         title: Faker::Book.title,
         author: Faker::Book.author,
         publisher: Faker::Book.publisher,
         genre: Faker::Book.genre,
-        quantity: rand(1..8)
+        quantity: rand(3..8)
         )
 end
 
