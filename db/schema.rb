@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "genre"
     t.string "publisher"
     t.integer "quantity"
+    t.string "image"
+    t.string "description"
   end
 
   create_table "customers", force: :cascade do |t|

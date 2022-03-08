@@ -6,6 +6,8 @@ class CreateBookTable < ActiveRecord::Migration[6.1]
       t.string :genre
       t.string :publisher
       t.integer :quantity
+      t.string :image
+      t.string :description
     end
   end
 end
