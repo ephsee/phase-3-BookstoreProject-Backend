@@ -72,4 +72,13 @@ puts "Seeding Books"
         )
 end
 
+10.times do 
+
+    Order.create(
+        customer_id: Customer.all.sample.id,
+        book_id: Book.all.sample.id
+    )
+
+end
+
 puts "✅ Done seeding!"
