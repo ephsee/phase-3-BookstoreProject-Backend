@@ -29,6 +29,8 @@ class OrderController < ApplicationController
 
     delete '/orders/:id' do 
         order = Order.find(params[:id])
+        book = Book.find(order.book_id)
+        book.update(quantity: (book.quantity + 1))
         order.delete
         order.to_json
     end
