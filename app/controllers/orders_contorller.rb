@@ -6,9 +6,9 @@ class OrderController < ApplicationController
     end
 
     post '/orders' do
-        order = Order.create(customer_id:params[:customer_id], book_id:params[:book_id])
+        order = Order.create(customer_id: params[:customer_id], book_id: params[:book_id])
         book = Book.find(params[:book_id])
-        book.update(quantity: (b.quantity - 1))
+        book.update(quantity: (book.quantity - 1))
         order.to_json
     end
 
