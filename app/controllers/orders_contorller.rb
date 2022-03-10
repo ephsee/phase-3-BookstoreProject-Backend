@@ -32,7 +32,7 @@ class OrderController < ApplicationController
         book = Book.find(order.book_id)
         book.update(quantity: (book.quantity + 1))
         order.delete
-        order.to_json
+        Order.all.where(customer_id: order.customer_id).to_json
     end
 
     patch '/order/:id' do
